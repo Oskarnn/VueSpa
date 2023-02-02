@@ -53,3 +53,6 @@
     </nav>
     <RouterView />
 </template>
+<style scoped>
+
+</style>
