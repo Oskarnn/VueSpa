@@ -54,5 +54,13 @@
     <RouterView />
 </template>
 <style scoped>
-
+    .offcanvas-title {
+        color: black;
+    }
+    .navbar-brand {
+        color: white;
+    }
+    .navbar-toggler {
+        background-color: white;
+    }
 </style>
