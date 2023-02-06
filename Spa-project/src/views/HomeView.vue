@@ -11,9 +11,7 @@
     <div id="offers">
         <div class="container text-center">
             <div class="row align-items-start">
-                <SpaOffers />
-                <SpaOffers />
-                <SpaOffers />
+               <spa-offers v-for="spa in spas" :key="spa.id" :offer="spa"/>
             </div>
         </div>
     </div>
@@ -22,7 +20,20 @@
     export default {
         data() {
             return {
-                message: 'Vilket paket önskas?'
+                message: 'Vilket paket önskas?',
+                spas: []
+            }
+        },
+        components: { 'spa-offers': SpaOffers },
+        /* mounted () : it will executed before creating the component. created () : it will executed after creating the component for render. */
+        mounted() {
+            this.fetchData()
+        },
+        methods: {
+            async fetchData() {
+                const res = await fetch('spa.json')
+                const val = await res.json()
+               this.spas = val
             }
         }
     }

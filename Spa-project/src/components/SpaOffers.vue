@@ -8,15 +8,24 @@
                 alt="bath"
             />
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">{{ offer.name }}</h5>
                 <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    {{ offer.including }}
                 </p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>
 </template>
-<script></script>
+<script>
+export default {
+    props: {
+        offer:{
+            required: true,
+            type: Object
+        }
+
+    }
+}
+</script>
 <style></style>
